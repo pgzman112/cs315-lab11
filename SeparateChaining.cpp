@@ -5,9 +5,20 @@
 
 using namespace std;
 
-int main(){
-  cout << "Please enter a starting board position: " << endl;
+struct move{
+	int a;
+	int b;
+	int c;
+};
 
+int main(){
+
+  ifstream moveFile;
+  moveFile.open("moveSet.txt");
+
+
+  cout << "Please enter a starting board position: " << endl;
+  
   vector<bool> board(49, false);
 
   string in;
@@ -22,10 +33,11 @@ int main(){
   }
 
 
+} // End main
 
+bool solve (vector<bool> x, vector<int> & mset ){
+	
 }
-
-bool solve (vector<bool> x, )
 
 bool solved(vector<bool> board){
   int count = 0;
