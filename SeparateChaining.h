@@ -34,6 +34,10 @@ class HashTable
         return find( begin( whichList ), end( whichList ), x ) != end( whichList );
     }
 
+    int getSize(){
+      return currentSize;
+    }
+
     void makeEmpty( )
     {
         for( auto & thisList : theLists )
@@ -53,10 +57,10 @@ class HashTable
 
         return true;
     }
-    
+
     bool insert( HashedObj && x )
     {
-        auto & whichList = theLists[ myhash( x ) ];      
+        auto & whichList = theLists[ myhash( x ) ];
         if( find( begin( whichList ), end( whichList ), x ) != end( whichList ) )
             return false;
         whichList.push_back( std::move( x ) );
